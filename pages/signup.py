@@ -4,22 +4,23 @@ def show_signup_page():
      # Adding the fontawesome icons
      ui.add_head_html("<script src='https://kit.fontawesome.com/ccba89e5d4.js' crossorigin='anonymous'></script>")
      
-     with ui.element("div").classes("w-full h-screen flex flex-row m-0 p-0 gap-0"):
+     with ui.element("div").classes("w-full h-screen flex flex-row m-0 p-0 gap-0 overflow-hidden"):
         with ui.element("div").classes("bg-[url('https://cdn.pixabay.com/photo/2018/01/15/21/50/concert-3084876_1280.jpg')] bg-cover bg-center flex flex-col w-1/2 h-full justify-center items-center"):
             with ui.column().classes("items-center"):
                 ui.label("Welcome back").classes("text-white text-4xl font-bold mb-4")
                 ui.label("To keep connected with us provide us with your information").classes("text-white mb-4")
-                # ui.button("Sign In").classes("")
-                with ui.button(text=None).classes('relative px-4 rounded-lg flex items-center justify-center bg-transparent border-none'):
-                    # The blurred overlay
-                    ui.element('div').classes('absolute inset-0 backdrop-blur-sm bg-white/30')
-                    # The text label (must be a separate element to avoid being blurred)
-                    ui.label('Signup').classes('relative z-10 text-white font-semibold text-sm')
+                
+                with ui.link("","/signin").classes("no-underline"):
+                    with ui.button(text=None).classes('relative px-4 rounded-lg flex items-center justify-center bg-transparent border-none'):
+                        # The blurred overlay
+                        ui.element('div').classes('absolute inset-0 backdrop-blur-sm bg-white/30')
+                        # The text label (must be a separate element to avoid being blurred)
+                        ui.label('Signin').classes('relative z-10 text-white font-semibold text-sm')
             
         with ui.column().classes('w-1/2 h-full bg-white flex flex-col justify-center items-center p-4'):
             with ui.row().classes('items-center'):
                 ui.label('Event').classes('text-2xl font-bold text-gray-800')
-                ui.label('Hive').classes('text-2xl font-bold text-orange-500')
+                ui.label('Hive').classes('text-2xl font-bold text-orange-600')
 
             ui.label('Sign Up to Event Hive').classes('text-3xl font-bold text-gray-800')
 

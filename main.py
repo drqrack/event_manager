@@ -1,4 +1,4 @@
-from nicegui import ui
+from nicegui import ui, app
 from pages.home import show_home_page
 from pages.signin import show_signin_page
 from pages.signup import show_signup_page
@@ -8,6 +8,11 @@ from pages.create_event import show_create_event_page
 from pages.not_found import show_not_found_page
 from components.navbar import show_navbar
 from components.footer import show_footer
+
+# Expose the assets folder to the nicegui server
+app.add_static_files("/assets", "assets")
+
+ui.add_head_html('<link rel="stylesheet" href="/assets/reset.css"/>')
 
 @ui.page("/")
 def home_page():

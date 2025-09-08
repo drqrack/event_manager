@@ -4,7 +4,7 @@ def show_signin_page():
     #  Adding the fontawesome icons
     ui.add_head_html("<script src='https://kit.fontawesome.com/ccba89e5d4.js' crossorigin='anonymous'></script>")
      
-    with ui.element("div").classes("w-full h-screen flex flex-row m-0 p-0 gap-0"):
+    with ui.element("div").classes("w-full h-screen flex flex-row m-0 p-0 gap-0 overflow-hidden"):
         
         with ui.column().classes('w-1/2 h-full bg-white flex flex-col justify-center items-center p-4'):
             with ui.row().classes('items-center'):
@@ -27,12 +27,11 @@ def show_signin_page():
             with ui.column().classes("items-center"):
                 ui.label("Hello Friend").classes("text-white text-4xl font-bold mb-4")
                 ui.label("To keep connected with us provide us with your information").classes("text-white mb-4")
-                # ui.button("Sign Up").classes("bg-transparent shadow-2xl shadow-white blur-[2px]").props("label=Sign")
-                with ui.button(text=None).classes('relative px-4 flex items-center justify-center bg-transparent border-none'):
-            
-                    # The blurred overlay
-                    ui.element('div').classes('absolute inset-0 backdrop-blur-sm bg-white/30')
-            
-                    # The text label (must be a separate element to avoid being blurred)
-                    ui.label('Signin').classes('relative z-10 text-white font-semibold text-sm')
+                
+                with ui.link("", "/signup").classes("no-underline"):
+                    with ui.button(text=None).classes('relative px-4 flex items-center justify-center bg-transparent border-none'):
+                        # The blurred overlay
+                        ui.element('div').classes('absolute inset-0 backdrop-blur-sm bg-white/30')    
+                        # The text label (must be a separate element to avoid being blurred)
+                        ui.label('Signup').classes('relative z-10 text-white font-semibold text-sm')
             
