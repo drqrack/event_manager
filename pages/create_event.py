@@ -8,7 +8,7 @@ def show_create_event_page():
     show_navbar()
     with ui.element("div").classes("w-screen h-screen items-center justify-center flex flex-col bg-orange-50"):
         ui.label("Create Event").classes("font-bold text-3xl mb-4")
-        with ui.card().classes("font-bold shadow-orange-600 shadow-2xl"):
+        with ui.card().classes("font-bold shadow-2xl"):
             ui.label("Event Title")
             ui.input(placeholder="Enter title").props("outlined").classes("w-full")
             ui.label("Event Venue")
@@ -28,7 +28,7 @@ def show_create_event_page():
 
     with ui.element("div").classes("w-screen h-screen items-center justify-center flex flex-col bg-orange-50"):
         ui.label("Event Description").classes("font-bold text-3xl mb-4")
-        with ui.card().classes("font-bold shadow-orange-600 shadow-2xl mb-8"):
+        with ui.card().classes("font-bold shadow-2xl mb-8"):
             ui.label("Event Image")
             
             ui.label("Event Description")
