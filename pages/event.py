@@ -1,7 +1,10 @@
 from nicegui import ui
+from components.navbar import show_navbar
+from components.footer import show_footer
 
-
+@ui.page('/event')
 def show_event_page():
+    show_navbar()
     with ui.element("div").classes(
         "w-full flex flex-row bg-[url('/assets/event.jpg')] bg-cover bg-center mb-8"
     ):
@@ -80,3 +83,4 @@ def show_event_page():
                 ui.html('<i class="fa-brands fa-x-twitter"></i>').classes(
                     "hover:text-orange-600 cursor-pointer"
                 )
+    show_footer()

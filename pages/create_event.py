@@ -1,6 +1,11 @@
 from nicegui import ui
+from components.navbar import show_navbar
+from components.footer import show_footer
 
+@ui.page('/create_event')
 def show_create_event_page():
+    ui.query(".nicegui-content").classes('m-0 p-0 gap-0')
+    show_navbar()
     with ui.element("div").classes("w-screen h-screen items-center justify-center flex flex-col bg-orange-50"):
         ui.label("Create Event").classes("font-bold text-3xl mb-4")
         with ui.card().classes("font-bold shadow-orange-600 shadow-2xl"):
@@ -30,3 +35,4 @@ def show_create_event_page():
             ui.input(placeholder="Type here...")
 
         ui.button("Create Event").props("color=orange-7").classes("w-1/4")
+    show_footer()
