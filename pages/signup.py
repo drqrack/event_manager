@@ -32,6 +32,6 @@ def show_signup_page():
                 ui.input('PASSWORD', placeholder='Enter your password', password=True, password_toggle_button=True).classes('w-3/4').props("outlined")
                 ui.input('CONFIRM PASSWORD', placeholder='Enter your password', password=True, password_toggle_button=True).classes('w-3/4 mb-2').props("outlined")
 
-                ui.button('Sign Up', icon='fa-solid fa-user-plus').classes('w-1/4 text-white font-bold rounded-sm shadow').props("color=orange-7")
+                ui.button('Sign Up', icon='fa-solid fa-user-plus').classes("text-white bg-orange-600 w-[50%] p-2").props("flat dense no-caps")
                 ui.label('Or').classes('text-gray-500')
-                ui.button('Sign up with Google', icon='fa-brands fa-google').classes("px-8").props("color=blue-11")
+                ui.button('Sign up with Google', icon='fa-brands fa-google').classes("text-white bg-blue-600 w-[50%] p-2").props("flat dense no-caps")

@@ -9,7 +9,7 @@ def show_signin_page():
     with ui.element("div").classes("w-full h-screen flex flex-row m-0 p-0 gap-0 overflow-hidden"):
         
         with ui.column().classes('w-1/2 h-full bg-white flex flex-col justify-center items-center p-4'):
-            with ui.row().classes('items-center'):
+            with ui.row().classes('items-center gap-0 space-x-2'):
                 ui.label('Event').classes('text-2xl font-bold text-gray-800 mb-8')
                 ui.label('Hive').classes('text-2xl font-bold text-orange-600 mb-8')
 
@@ -19,11 +19,11 @@ def show_signin_page():
             ui.input('YOUR EMAIL', placeholder='Enter your email').classes('w-3/4').props("outlined")
             ui.input('PASSWORD', placeholder='Enter your password', password=True, password_toggle_button=True).classes('w-3/4').props("outlined")
             # ui.label("Forgot your password?").classes("text-gray-500 mb-8 ")
-            ui.link('Forgot your password?', '#').classes('text-xs text-purple-600 no-underline hover:underline')
+            ui.link('Forgot your password?', '#').classes('text-sm text-purple-600 no-underline hover:underline')
 
-            ui.button('Sign In', icon='fa-solid fa-arrow-right-to-bracket').classes('w-1/4 text-white font-bold rounded-sm shadow').props("color=orange-7")
+            ui.button('Sign In', icon='fa-solid fa-arrow-right-to-bracket').classes('w-1/4 text-white font-bold rounded-sm shadow').props("flat dense no-caps").classes('bg-orange-600 w-[50%] p-2')
             ui.label('Or').classes('text-gray-500')
-            ui.button('Sign in with Google', icon='fa-brands fa-google').classes("px-8").props("color=blue-11")
+            ui.button('Sign in with Google', icon='fa-brands fa-google').classes("text-white bg-blue-600 w-[50%] p-2").props("flat dense no-caps")
 
         with ui.element("div").classes("bg-[url('https://cdn.pixabay.com/photo/2018/05/10/11/34/concert-3387324_1280.jpg')] bg-cover bg-center flex flex-col w-1/2 h-full justify-center items-center"):
             with ui.column().classes("items-center"):

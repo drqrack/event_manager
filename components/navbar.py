@@ -3,7 +3,7 @@ from nicegui import ui
 def show_navbar():
     ui.query(".nicegui-content").classes("m-o p-0 gap-0")
     with ui.element().classes(
-        "w-full bg-transparent flex flex-row justify-between items-center px-10 py-10"
+        "w-full bg-transparent flex flex-row justify-between items-center px-10 py-5"
     ):
         with ui.row().classes("font-bold text-3xl space-x-2 gap-0"):
             ui.label("Event").classes("")
