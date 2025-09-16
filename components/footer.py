@@ -12,11 +12,14 @@ def show_footer():
             ui.label("Event").classes("text-white")
             ui.label("Hive").classes("text-orange-600")
 
-        with ui.row().classes("items-center justify-center text-white mb-8"):
-            ui.input(placeholder="Enter your mail").props("borderless dense flat").classes(
-                "w-[240px] h-[40px] px-2 py-1 text-sm bg-white rounded-sm"
-            )
-            ui.button("Subscribe").props("flat dense no-caps").classes("px-8 py-2 text-sm font-normal text-white w-[120px] bg-orange-900")
+        with ui.row().classes("items-center justify-center text-white mb-8 gap-0"):
+            # ui.input(placeholder="Enter your mail").props("borderless dense flat").classes(
+            #     "w-[240px] h-[40px] px-2 py-1 text-sm bg-white rounded-sm"
+            # )
+            # ui.button("Subscribe").props("flat dense no-caps").classes("px-8 py-2 text-sm font-normal text-white w-[120px] bg-orange-900")
+            ui.input(placeholder="Enter your mail").props("outlined no-caps").classes("bg-white w-64")
+            ui.button("Subscribe").props("flat dense no-caps").classes("px-20 py-4 bg-orange-400")
+            
 
         ui.html("<hr>").classes("mt-16")
 
