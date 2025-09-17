@@ -1,6 +1,11 @@
 from nicegui import ui
 from components.navbar import show_navbar
 from components.footer import show_footer
+from components.event_card import show_event_card
+import requests
+from utils.api import base_url
+
+
 
 @ui.page('/')
 def show_home_page():
@@ -44,13 +49,12 @@ def show_home_page():
                     ui.select(label="", value='Category', options=category)
 
             with ui.grid(columns=3).classes("w-[80%] h-full rounded-lg p-4 justify-center items-center"):
-                for i in range(6):
-                    with ui.card().classes(""):
-                        ui.label("Title")
-                        ui.image("/assets/college2.jpg").classes("rounded-lg transform transition-transform duration-500 hover:scale-105")
-                        ui.label("Best Seller Book Bootcamp").classes("font-bold text-lg")
-                        ui.label("Friday, April 16, 8:27AM").classes('text-blue-500 text-sm')
-                        ui.label("Online Event - Attend Anywhere").classes('text-gray-700 text-sm')
+                response = requests.get(url=f"{base_url}/events?limit=0")
+                # print(response.status_code, response.content)
+                json_data = response.json()
+                for event in json_data["data"]:
+                    show_event_card(event)
+
                 ui.button("Load More").props('flat dense no-caps').classes('bg-orange-600 text-white')
 
             with ui.row().classes('bg-orange-400 flex flex-row justify-around w-full h-full'):
@@ -59,6 +63,6 @@ def show_home_page():
                 with ui.element("div").classes('w-1/3 text-white'):
                     ui.label('Make your own Event')
                     ui.label('There are so many events in Ghana. Lets go and have fun')
-                    ui.button('Create Events')
+                    ui.button('Create Events', on_click=lambda: ui.navigate.to("/create_event"))
 
     # show_footer()

@@ -20,7 +20,8 @@ def show_signup_page():
                             ui.label('Signin').classes('relative z-10 text-white font-semibold text-sm')
                 
             with ui.column().classes('w-1/2 h-full bg-white flex flex-col justify-center items-center p-4'):
-                with ui.row().classes('items-center'):
+                with ui.row().classes('items-center gap-0 space-x-2'):
+                    
                     ui.label('Event').classes('text-2xl font-bold text-gray-800')
                     ui.label('Hive').classes('text-2xl font-bold text-orange-600')
 
